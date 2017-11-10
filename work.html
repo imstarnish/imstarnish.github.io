@@ -7,7 +7,6 @@
     <title>Anish Jain | Web Developer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,17 +16,7 @@
     </head>
   <body oncontextmenu="return false">
       <div id="particles-js"></div>
-      <div class="container h-100 justify-content-center align-items-center">
-      <div id="main" class="row justify-content-center">
-          <div class="text1"></div>
-          <div class="des text-center">I have a diverse set of skills, ranging from design, to HTML + CSS + JavaScript + bootstrap, all the way to PHP + SQL and learning.</div>
-          <div class="i"><img src="mypic.jpg" alt="my pic" class="rounded-circle"></div>
-      </div>
-      <div id="social" class="row justify-content-center align-items-center">
-          <div><a href="https://www.facebook.com/imstarnish" target="_blank"><i class="fa fa-facebook"></i></a> <a href="https://www.instagram.com/im_starnish" target="_blank"><i class="fa fa-instagram"></i></a> <a href="https://www.linkedin.com/in/anish-jain-289611147" target="_blank"><i class="fa fa-linkedin"></i></a></div>
-          </div><hr>
-          <div id="footer" class="row justify-content-center"><a href="work.html">Work</a></div> 
-      </div>
+      <h1 id="hhw">Coming Soon</h1>
       <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
       <script>
         particlesJS("particles-js", {
@@ -126,83 +115,6 @@
   },
   "retina_detect": true
 });
-      </script>
-      <script>
-        class TextScramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#________';
-    this.update = this.update.bind(this);
-  }
-  setText(newText) {
-    const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, newText.length);
-    const promise = new Promise((resolve) => this.resolve = resolve);
-    this.queue = [];
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || '';
-      const to = newText[i] || '';
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
-    }
-    cancelAnimationFrame(this.frameRequest)
-    this.frame = 0;
-    this.update();
-    return promise;
-  }
-  update() {
-    let output = '';
-    let complete = 0;
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i];
-      if (this.frame >= end) {
-        complete++;
-        output += to;
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar();
-          this.queue[i].char = char;
-        }
-        output += `<span class="dud">${char}</span>`;
-      } else {
-        output += from;
-      }
-    }
-    this.el.innerHTML = output;
-    if (complete === this.queue.length) {
-      this.resolve();
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update);
-      this.frame++;
-    }
-  }
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }
-}
-const phrases = [
-  'Hi There!,',
-  'My name is',
-  'Anish',
-  'and I am a',
-  'front-end web developer',
-  'and a',
-  'freelancer.'
-];
-
-const el = document.querySelector('.text1');
-const fx = new TextScramble(el);
-
-let counter = 0;
-const next = () => {
-  fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 800)
-  });
-  counter = (counter + 1) % phrases.length;
-}
-
-next();
       </script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
